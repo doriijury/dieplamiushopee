@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Tạo Link Shopee</title>
+
+<style>
+
+body{
+background:#f3b79f;
+font-family:Arial;
+margin:0;
+text-align:center;
+}
+
+.header{
+padding:40px 20px;
+}
+
+.header h1{
+color:#ff5722;
+}
+
+.domain{
+background:#ffd8c8;
+padding:6px 14px;
+border-radius:20px;
+display:inline-block;
+}
+
+.container{
+background:white;
+max-width:550px;
+margin:auto;
+padding:25px;
+border-radius:14px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ddd;
+margin-top:10px;
+font-size:15px;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+margin-top:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+.create{
+background:#ff5722;
+color:white;
+}
+
+.copy{
+background:#2196f3;
+color:white;
+}
+
+.facebook{
+background:#1877f2;
+color:white;
+}
+
+.result{
+margin-top:15px;
+word-break:break-all;
+font-size:14px;
+}
+
+.guide{
+background:#f5f5f5;
+padding:15px;
+margin-top:20px;
+border-radius:10px;
+text-align:left;
+}
+
+.voucher{
+margin-top:20px;
+}
+
+.voucher img{
+width:100%;
+border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>🔗 Tạo Link Shopee</h1>
+
+<p class="domain">dorijury.github.io</p>
+
+</div>
+
+<div class="container">
+
+<h3>🔒 Link sản phẩm Shopee</h3>
+
+<input id="link" placeholder="Dán link Shopee vào đây">
+
+<button class="create" onclick="createLink()">Tạo Link Ngay</button>
+
+<p class="result" id="result"></p>
+
+<button class="copy" onclick="copyLink()">Copy Link</button>
+
+<a href="https://facebook.com" target="_blank">
+<button class="facebook">Đến bài đăng Facebook</button>
+</a>
+
+<div class="guide">
+
+<b>Hướng dẫn</b>
+
+<p>1. Dán link sản phẩm cần mua vào ô.</p>
+<p>2. Nhấn "Tạo link ngay".</p>
+<p>3. Nhấn "Copy".</p>
+<p>4. Dán link vào bài đăng Facebook.</p>
+
+</div>
+
+<div class="voucher">
+
+<img src="https://i.imgur.com/5cX1YQH.png">
+
+</div>
+
+</div>
+
+<script>
+
+let finalLink="";
+
+function createLink(){
+
+let link=document.getElementById("link").value;
+
+let affiliate="173022304412";
+
+finalLink="https://s.shopee.vn/an_redir?origin_link="+encodeURIComponent(link)+"&affiliate_id="+affiliate;
+
+document.getElementById("result").innerHTML=finalLink;
+
+}
+
+function copyLink(){
+
+navigator.clipboard.writeText(finalLink);
+
+alert("Đã copy link");
+
+}
+
+</script>
+
+</body>
+</html>
